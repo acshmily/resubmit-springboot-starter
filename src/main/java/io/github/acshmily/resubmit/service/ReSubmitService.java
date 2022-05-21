@@ -13,5 +13,5 @@ public interface ReSubmitService {
      * @return true 通过、 false 不通过
      */
     boolean process(String key,Long tts);
-    String FLAG = "Lock_By_ReSubmit_Starter";
+    String FLAG = "ReSubmit_Starter_";
 }

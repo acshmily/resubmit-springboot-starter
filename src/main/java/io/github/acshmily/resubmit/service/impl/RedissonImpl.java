@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class RedissonImpl implements ReSubmitService {
     @Override
     public boolean process(String key, Long tts) {
-        RLock rLock = redissonClient.getLock(key);
+        RLock rLock = redissonClient.getLock(FLAG + key);
         if(rLock.isLocked()){
             return false;
         }else{

@@ -14,5 +14,5 @@ import java.lang.annotation.*;
 public @interface ReSubmit {
     String value() default "";
     // 过期时间，对于单体不适用
-    long tts() default 60;
+    long tts() default 1;
 }

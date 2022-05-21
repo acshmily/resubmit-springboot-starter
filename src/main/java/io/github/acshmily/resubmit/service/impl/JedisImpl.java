@@ -5,6 +5,8 @@ import io.github.acshmily.resubmit.service.ReSubmitService;
 import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.params.SetParams;
 
 /**
  * Author: Huanghz
@@ -17,13 +19,18 @@ import redis.clients.jedis.Jedis;
 public class JedisImpl implements ReSubmitService {
     @Override
     public boolean process(String key, Long tts) {
-        return jedis.setnx(key, FLAG) == 1 && jedis.expire(key, tts) > 0;
+        try (Jedis jedis = jedisPool.getResource()) {
+            return "OK".equals(jedis.set(FLAG + key, "1", new SetParams().nx().ex(tts)));
+        } catch (Exception e) {
+            //
+        }
+        return true;
     }
 
 
-    public JedisImpl(Jedis jedis) {
-        this.jedis = jedis;
+    public JedisImpl(JedisPool jedisPool) {
+        this.jedisPool = jedisPool;
     }
 
-    private final Jedis jedis;
+    private final JedisPool jedisPool;
 }
