@@ -91,7 +91,7 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/acshmily/spring-boot-mask-info-starter</url>
+        <url>https://github.com/acshmily/resubmit-springboot-starter</url>
         <connection>scm:git:https://github.com/acshmily/resubmit-springboot-starter.git</connection>
         <developerConnection>scm:git:https://github.com/acshmily/resubmit-springboot-starter.git</developerConnection>
         <tag>HEAD</tag>
