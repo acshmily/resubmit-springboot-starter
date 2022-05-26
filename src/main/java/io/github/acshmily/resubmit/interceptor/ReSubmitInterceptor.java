@@ -61,7 +61,7 @@ public class ReSubmitInterceptor implements HandlerInterceptor {
         if(isReSubmitAnnotation){
             CustomHttpServletRequestWrapper customHttpServletRequestWrapper = new CustomHttpServletRequestWrapper(request);
             if(!customHttpServletRequestWrapper.getBody().isEmpty() && !reSubmitService.process( KeyUtils.getKey(customHttpServletRequestWrapper.getBody()),reSubmit.tts())){
-                errorResponse(response);
+                errorResponse(response,reSubmit);
                 return false;
             }
         }
@@ -75,7 +75,7 @@ public class ReSubmitInterceptor implements HandlerInterceptor {
      * @param res
      * @throws IOException
      */
-    private void errorResponse(HttpServletResponse res) {
+    private void errorResponse(HttpServletResponse res,ReSubmit reSubmit) {
         try(OutputStreamWriter osw = new OutputStreamWriter(res.getOutputStream(), StandardCharsets.UTF_8);
             PrintWriter writer = new PrintWriter(osw, true) )
         {
@@ -83,7 +83,7 @@ public class ReSubmitInterceptor implements HandlerInterceptor {
             res.setStatus(HttpServletResponse.SC_ACCEPTED);
             HashMap<String,String> resultVO = new HashMap<>(3);
             resultVO.put("code",String.valueOf(HttpServletResponse.SC_ACCEPTED));
-            resultVO.put("msg","已提交");
+            resultVO.put("msg",reSubmit.msg());
             resultVO.put("data","");
             String jsonStr = OBJECT_MAPPER.writeValueAsString(resultVO);
             writer.write(jsonStr);

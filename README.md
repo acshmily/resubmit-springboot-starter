@@ -1,6 +1,6 @@
 #  resubmit-springboot-starter
 
-![Version](https://img.shields.io/badge/release-v0.1-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/release-v1.1-brightgreen?style=flat-square)
 [![Reference](https://img.shields.io/badge/Redis-Reference-blue.svg?style=flat-square)](https://hub.docker.com/_/redis)
 [![Reference](https://img.shields.io/badge/SpringBoot-Reference-blue.svg?style=flat-square)](https://github.com/acshmily/resubmit-springboot-starter)
 ![License](https://img.shields.io/:License-Apache2.0-green.svg?style=flat-square)
