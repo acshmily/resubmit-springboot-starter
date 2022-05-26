@@ -24,7 +24,7 @@ public class ClassCacheContainer {
     /**
      * 获取缓存
      * @param clazz
-     * @return
+     * @return Field[]
      */
     public static Field[] getClassFields(Class clazz){
         return cacheClassFields.get(clazz);
@@ -33,7 +33,7 @@ public class ClassCacheContainer {
     /**
      * 判断缓存是否命中
      * @param clazz
-     * @return
+     * @return boolean
      */
     public static boolean existClassFields(Class clazz){
         return cacheClassFields.containsKey(clazz);
@@ -50,7 +50,7 @@ public class ClassCacheContainer {
     /**
      * 判断缓存是否命中
      * @param methodSignature
-     * @return
+     * @return boolean
      */
     public static boolean existMethodSignature(Method methodSignature){
         return cacheMethodSignatures.containsKey(methodSignature);
@@ -59,7 +59,7 @@ public class ClassCacheContainer {
     /**
      * 获取方法缓存
      * @param methodSignature
-     * @return
+     * @return Annotation[][]
      */
     public static Annotation[][] getMethodSignature(Method methodSignature){
         return cacheMethodSignatures.get(methodSignature);

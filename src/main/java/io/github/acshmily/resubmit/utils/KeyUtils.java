@@ -14,7 +14,7 @@ public class KeyUtils {
     /**
      * 根据object获得key
      * @param string
-     * @return
+     * @return String
      */
     public static String getKey(@NotNull final String string){
         Assert.notNull(string,"getKey method parameter can not null");
