@@ -14,7 +14,7 @@ the function need redis cache the request features,support RedisTemplate/Jedis/R
 <dependency>
     <groupId>com.github.acshmily</groupId>
     <artifactId>resubmit-spring-boot-starter</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
 ## Gradle Example
