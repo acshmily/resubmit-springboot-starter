@@ -1,6 +1,6 @@
 #  resubmit-springboot-starter
 
-![Version](https://img.shields.io/badge/release-v1.1-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/release-v1.2-brightgreen?style=flat-square)
 [![Reference](https://img.shields.io/badge/Redis-Reference-blue.svg?style=flat-square)](https://hub.docker.com/_/redis)
 [![Reference](https://img.shields.io/badge/SpringBoot-Reference-blue.svg?style=flat-square)](https://github.com/acshmily/resubmit-springboot-starter)
 ![License](https://img.shields.io/:License-Apache2.0-green.svg?style=flat-square)
@@ -14,13 +14,13 @@ the function need redis cache the request features,support RedisTemplate/Jedis/R
 <dependency>
     <groupId>com.github.acshmily</groupId>
     <artifactId>resubmit-spring-boot-starter</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 </dependency>
 ```
 ## Gradle Example
 
 ```Gradle
-implementation 'com.github.acshmily:resubmit-spring-boot-starter:1.0'
+implementation 'com.github.acshmily:resubmit-spring-boot-starter:1.2'
 ```
 
 ## How to use?
