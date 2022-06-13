@@ -21,7 +21,8 @@ public class ReSubmitFilter implements Filter {
         if(request instanceof HttpServletRequest){
             // check is file upload
             HttpServletRequest servletRequest = (HttpServletRequest) request;
-            if(!StringUtils.isEmpty(servletRequest.getContentType()) && MediaType.MULTIPART_FORM_DATA_VALUE.equalsIgnoreCase(servletRequest.getContentType())){
+            String type = servletRequest.getContentType();
+            if(StringUtils.hasLength(type) && type.contains(MediaType.MULTIPART_FORM_DATA_VALUE)){
                 servletRequest = new StandardServletMultipartResolver().resolveMultipart(servletRequest);
             }
             ServletRequest requestWrapper = new CustomHttpServletRequestWrapper(servletRequest);
